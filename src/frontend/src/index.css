@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Warm paper/cream background with subtle texture */
+    --background: 0.98 0.01 45;
+    --foreground: 0.2 0.02 30;
+
+    /* Card with slight elevation */
+    --card: 1 0 0;
+    --card-foreground: 0.2 0.02 30;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0.02 30;
+
+    /* Coral primary - updated to #f18c94 */
+    --primary: 0.72 0.12 10;
+    --primary-foreground: 0.99 0 0;
+
+    /* Warm neutral secondary */
+    --secondary: 0.95 0.01 45;
+    --secondary-foreground: 0.25 0.02 30;
+
+    /* Muted warm tones */
+    --muted: 0.96 0.01 45;
+    --muted-foreground: 0.5 0.02 30;
+
+    /* Accent coral lighter */
+    --accent: 0.92 0.08 10;
+    --accent-foreground: 0.25 0.02 30;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Warm borders */
+    --border: 0.9 0.01 45;
+    --input: 0.9 0.01 45;
+    --ring: 0.72 0.12 10;
+
+    /* Header colors - updated pink info bar (#f18c94) and blue nav text */
+    --info-bar: 0.72 0.12 10;
+    --header-blue: 0.45 0.15 250;
+
+    --chart-1: 0.72 0.12 10;
+    --chart-2: 0.6 0.15 180;
+    --chart-3: 0.55 0.12 280;
+    --chart-4: 0.7 0.16 60;
+    --chart-5: 0.5 0.14 320;
+  }
+
+  .dark {
+    /* Dark mode: ink on dark paper */
+    --background: 0.18 0.02 30;
+    --foreground: 0.96 0.01 45;
+
+    --card: 0.22 0.02 30;
+    --card-foreground: 0.96 0.01 45;
+
+    --popover: 0.22 0.02 30;
+    --popover-foreground: 0.96 0.01 45;
+
+    /* Coral in dark mode - updated to match new pink tone */
+    --primary: 0.68 0.14 10;
+    --primary-foreground: 0.15 0.02 30;
+
+    --secondary: 0.25 0.02 30;
+    --secondary-foreground: 0.96 0.01 45;
+
+    --muted: 0.28 0.02 30;
+    --muted-foreground: 0.65 0.02 30;
+
+    --accent: 0.35 0.1 10;
+    --accent-foreground: 0.96 0.01 45;
+
+    --destructive: 0.65 0.22 27;
+    --destructive-foreground: 0.96 0.01 45;
+
+    --border: 0.3 0.02 30;
+    --input: 0.3 0.02 30;
+    --ring: 0.68 0.14 10;
+
+    /* Header colors in dark mode */
+    --info-bar: 0.68 0.14 10;
+    --header-blue: 0.55 0.18 250;
+
+    --chart-1: 0.68 0.14 10;
+    --chart-2: 0.6 0.18 180;
+    --chart-3: 0.55 0.15 280;
+    --chart-4: 0.75 0.18 60;
+    --chart-5: 0.5 0.16 320;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Paper texture overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-coral {
+    color: oklch(var(--primary));
+  }
+
+  .fill-coral {
+    fill: oklch(var(--primary));
+  }
+
+  .bg-info-bar {
+    background-color: oklch(var(--info-bar));
+  }
+
+  .text-header-blue {
+    color: oklch(var(--header-blue));
+  }
+
+  .bg-header-blue {
+    background-color: oklch(var(--header-blue));
+  }
+}
