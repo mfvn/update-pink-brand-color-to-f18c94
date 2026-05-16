@@ -24239,7 +24239,7 @@ const CONTACT_INFO = {
   phone: "937735944",
   email: "geral.coralatelie@gmail.com",
   hours: {
-    weekdays: "das 10:00 às 19h30",
+    weekdays: "das 10h às 19h",
     saturday: "das 10:00 às 13h30",
     sunday: "Encerrado"
   },
@@ -24456,7 +24456,8 @@ function SiteHeader() {
   ];
   const infoMessages = [
     "Ateliê, Papelaria e Gráfica em Tomar",
-    `2ª a 6ª ${CONTACT_INFO.hours.weekdays} • Sábados ${CONTACT_INFO.hours.saturday}`
+    `Seg-Sex: ${CONTACT_INFO.hours.weekdays}`,
+    `Sáb: ${CONTACT_INFO.hours.saturday}`
   ];
   const isActive = (path) => currentPath === path;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "sticky top-0 z-50 w-full bg-white shadow-sm", children: [

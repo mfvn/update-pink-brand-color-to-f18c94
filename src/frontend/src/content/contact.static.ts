@@ -6,7 +6,7 @@ export const CONTACT_INFO = {
   phone: "937735944",
   email: "geral.coralatelie@gmail.com",
   hours: {
-    weekdays: "das 10:00 às 19h30",
+    weekdays: "das 10h às 19h",
     saturday: "das 10:00 às 13h30",
     sunday: "Encerrado",
   },

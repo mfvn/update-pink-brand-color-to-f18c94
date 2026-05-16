@@ -27,7 +27,8 @@ export default function SiteHeader() {
 
   const infoMessages = [
     "Ateliê, Papelaria e Gráfica em Tomar",
-    `2ª a 6ª ${CONTACT_INFO.hours.weekdays} • Sábados ${CONTACT_INFO.hours.saturday}`,
+    `Seg-Sex: ${CONTACT_INFO.hours.weekdays}`,
+    `Sáb: ${CONTACT_INFO.hours.saturday}`,
   ];
 
   const isActive = (path: string) => currentPath === path;
